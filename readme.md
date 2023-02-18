@@ -1,0 +1,4 @@
+# LUKS Bitwarden
+The aim of this project is to use LUKS passphrase saved in bitwarden to automatically decrypt and mount encrypted hard drive during linux boot process. 
+
+The way I'm using it is I have my own organization on selfhosted  [Vaultwarden](https://github.com/dani-garcia/vaultwarden) instance and collection of LUKS passwords, and separate account that has access to this collection. Script utilizes [Bitwarden CLI](https://bitwarden.com/help/cli/) to get the password, and then it decrypts and mounts partition. In case that computer is compromised, it's easy to revoke access to the collection of passwords and prevent decrypting the hard drive.

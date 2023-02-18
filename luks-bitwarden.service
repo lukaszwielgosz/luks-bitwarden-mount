@@ -1,0 +1,11 @@
+[Unit]
+Description=LUKS Bitwarden service
+After=network.target
+
+[Service]
+Environment="BITWARDENCLI_APPDATA_DIR=/root/.config/BitwardenCLI"
+ExecStart=/bin/bash /root/luks-bitwarden.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
